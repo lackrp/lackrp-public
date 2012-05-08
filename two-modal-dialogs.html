@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>jQuery Test</title>
+		<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.20.custom.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+                $('#dlg_b').dialog({
+                    autoOpen: false,
+                    height: 300,
+                    width: 350,
+                    modal: true,
+                    buttons: {
+                        'OK': function() {
+                            $('#input').val($('input[name=radio]:checked').val());
+                            $('#dlg_b').dialog('close');
+                        }
+                    }
+                });
+                $('#dlg_a').dialog({
+                    autoOpen: false,
+                    height: 400,
+                    width: 450,
+                    modal: true
+                });
+                $('#input').click(function() {
+                    $('#dlg_b').dialog('open');
+                });
+                $('#btn').button().click(function() {
+                    $('#dlg_a').dialog('open');
+                });
+			});
+		</script>
+	</head>
+	<body>
+        <div id="btn">Click this button to open the first dialog</div>
+        <div id="dlg_a">
+            Click this input box to open another dialog
+            <input type="text" id="input" />
+        </div>
+        <div id="dlg_b">
+            <div> To Be or Not To Be?</div>
+            <br />
+            <div>
+                <input type="radio" name="radio" value="2B" id="radio_a" checked="true">
+                <label for="radio_a">To Be</label>
+            </div>
+            <div>
+                <input type="radio" name="radio" value="~2B" id="radio_b">
+                <label for="radio_b">Not To Be</label>
+            </div>
+        </div>
+	</body>
+</html>
+
+
