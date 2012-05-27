@@ -1,4 +1,4 @@
 lackrp-public
 =============
 
-Things sharing by lackrp
+Things shared by lackrp
